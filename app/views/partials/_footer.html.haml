@@ -1,0 +1,50 @@
+.footer
+	.footer-top
+		%p.by-line Brought to you by #{@city.brought_by}, in partnership with the people of #{@city.name}. <a href="http://#{@city.agency_url}">#{@city.agency_url}</a>
+	.footer-bottom
+		%ul.footer-links
+			%li.more
+				%h2 Find out more
+				%ul
+					%li
+						%a{href:"/about"}About us
+					%li
+						%a{href:"mailto:#{@city.contact_email}"}Contact Us
+					%li
+						%a{href:"http://toolkit.sf72.org/", target:"_blank"}City72 Toolkit
+			%li.resources
+				%h2 Resources and Partners
+				%ul.resources-links
+					%li.resources-first
+						%ul
+							- Affiliate.offset(0).limit(4).each do |affiliate|
+								%li
+									%a{href: "http://#{affiliate.url}", target:"_blank"}
+										= affiliate.name
+					%li.resources-last
+						%ul
+							- Affiliate.offset(4).limit(4).each do |affiliate|
+								%li
+									%a{href: "http://#{affiliate.url}", target:"_blank"}
+										= affiliate.name
+
+			%li.social
+				%h2 Spread the word
+				%ul
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="#{root_url}">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+			-# %li.social
+			-# 	%h2 Languages
+			-# 	%ul
+			-# 		%li
+			-# 		%a{href:"/vi/home/"}tiếng Việt
+			-# 		%li
+			-# 		%a{href:"/zh/home/"}汉语
+			-# 		%li
+			-# 		%a{href:"/en/home/"}English
+			-# 		%li
+			-# 		%a{href:"/fi/home/"}Filipino
+			-# 		%li
+			-# 		%a{href:"/es/home/"}Español
+

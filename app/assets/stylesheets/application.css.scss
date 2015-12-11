@@ -1,0 +1,460 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ */
+@import "bourbon";
+@import "neat";
+@import "icons";
+@import "font_helvetica_neue";
+@import "font_miso";
+@import "mobile_menu";
+
+/* Main colors */
+$dark-grey: #4D4D4D;
+$body-color: #9b9b9b;
+$body-light: #a2a2a2;
+$mid-grey: #b4b4b4;
+$med-grey: #666;
+$text-grey: #7f7f7f;
+$light-grey: #e6e6e6;
+$subtle-grey: #eaeaea;
+$highlight: #FBB82a;
+$highlight-dark: #F15A24;
+
+
+/* Fonts options */
+$font-regular:'HelveticaNeueLT-Roman';
+$font-medium:'HelveticaNeueLT-Medium';
+$font-bold:'HelveticaNeueLT-Bold';
+
+/* Icons */
+$arrow: 'A';
+$hands: 'C';
+$first-aid: 'D';
+$phone: 'E';
+$airbnb-icn: 'F';
+$twitter-icn: 'G';
+$facebook-icn: 'H';
+$drive-icn: ',';
+$neighbors-icn: '.';
+$nixle-icn: ';';
+$video-play: 'I';
+
+/* Home icons mixins */
+@mixin icon($color,$icon-font-size,$icon,$bg,$pos-top,$pos-left){
+	&:before{
+		font-family: 'city72icons';
+		font-size: $icon-font-size;
+		color: $color;
+		content: $icon;
+		speak: none;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+		top: $pos-top;
+		left: $pos-left;
+		text-align: center;
+		padding-top: 15px;
+		background-color: $bg;
+		position: absolute;
+		height: 85px;
+		width: 100px;
+	}
+}
+
+@mixin icon-mini{
+	&:before{
+		font-size: 1.65rem;
+		border-radius: 50px;
+		padding-top: 22px;
+		height: 63px;
+		width: 85px;
+	}
+}
+
+@mixin icon-mid{
+	&:before{
+		font-size: 2.3rem;
+		border-radius: 50px;
+		padding-top: 17px;
+		height: 68px;
+		width: 85px;
+	}
+}
+
+@mixin icon-play{
+	&:before{
+		font-size: 2.35rem;
+		border-radius: 40px;
+		padding: 10px 4px 45px 10px;
+		height: 20px !important;
+		width: 62px !important;
+		top: 23%;
+		left: 36%;
+	}
+}
+
+
+
+/* CSS Mini Reset */
+html, body, div, form, fieldset, legend, label {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+
+img, iframe { border: 0; }
+
+ul { padding: 0; }
+ul li { list-style-type: none; }
+
+a {
+	text-decoration: none;
+	color: $highlight;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+::selection {
+	background: #FBB03B;
+	color: #FFF;
+	text-shadow: none;
+}
+
+/* Grid & Typography */
+
+$gutter: 30px;
+$border-box-sizing: false;
+$mobile: new-breakpoint(max-width 480px 4);
+
+h2 {font-size: 2.125rem; font-family: $font-bold;}
+h3 {font-size: 1.5rem; font-family: $font-medium;}
+h4 {font-size: 1.3rem;}
+h5 {margin: 0}
+
+@mixin intro-paragraph {
+	font-size: 1.1875rem;
+	line-height: 1.55;
+}
+
+@mixin col-title {
+	font-size: 1.3rem;
+	font-family: $font-bold;
+	font-weight: normal;
+	line-height: 1.375;
+	color: #505050;
+}
+
+/* LAYOUT */
+body {
+	font-family: $font-regular;
+	font-size: 16px;
+	line-height: 1.5;
+	color: $body-color;
+}
+
+.main-container {
+	@include outer-container;
+	width: 1020px;
+	padding: 0 30px;
+}
+
+/* COMMON ELEMENTS */
+
+.page-intro {
+
+	.big-title {
+		background: url() no-repeat left top;
+		width: 1020px;
+		height: 538px;
+		text-align: center;
+		padding-top: 9.3rem;
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+
+		h1 {
+			font-family: $font-bold;
+			font-size: 6.25rem;
+			margin: 0;
+			line-height: 1;
+			color: #FFF;
+		}
+
+		span {
+			display: block;
+			margin: 0.6rem 0 0;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			color: #FFF;
+		}
+	}
+
+	strong {
+		display: block;
+		font-family: $font-regular;
+	}
+
+	h2 {
+		margin: 1.6rem 0 0 0;
+		color: $dark-grey;
+		font-family: $font-bold;
+	}
+
+	p {
+		@include intro-paragraph;
+		margin: 0.1rem 0 1rem 0;
+		width: 44rem;
+	}
+}
+
+.quick-guide {
+	margin: 0;
+	padding: 0;
+	counter-reset: list-counter;
+
+	h2 {
+		margin: -0.3rem 0 0;
+		font-size: 2rem;
+		line-height: 1;
+		color: $dark-grey;
+		font-family: $font-medium;
+	}
+
+	li {
+		list-style:none;
+		padding-left: 7.9rem;
+	}
+
+	li:before {
+		content: counter(list-counter);
+		counter-increment: list-counter;
+		float: left;
+		margin: -0.3rem 0 0 -7rem;
+		padding: 0.6rem 1.5rem;
+		font-family: $font-medium;
+		font-size: 2rem;
+		color: #FFF;
+		background-color: $highlight-dark;
+		border-radius: 50%;
+	}
+
+	p {
+		margin: 0.4rem 0 0;
+		font-size: 1.2rem;
+		line-height: 1.6rem;
+	}
+}
+
+.opening {
+	@include row(block,RTL);
+	background-position: top right;
+	background-repeat: no-repeat;
+	position: relative;
+
+	h1 {
+		@include span-columns(8.62938893);
+		font-family: $font-bold;
+		font-size: 3.56rem;
+		line-height: 4.5625rem;
+		color: #FFF;
+		padding: 98px 130px 30px;
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+		margin-top: 0;
+	}
+
+
+	div {
+		@include span-columns(3.38061107);
+		color: #FFF;
+		background-color: $highlight;
+		padding: 0 20px 0 30px;
+		height: 417px;
+		margin-right: -1px;
+
+		p {
+			font-size: 1.1875rem;
+			line-height: 1.6875rem;
+			margin-top: 1.9rem;
+		}
+	}
+}
+
+@include reset-layout-direction;
+
+.modal-wrapper {
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	background: rgba(0,0,0,0.6);
+	overflow: scroll;
+}
+
+.modal {
+	position: absolute;
+	width: 640px;
+	left: 50%;
+	margin-left: -320px;
+	top: 5rem;
+	padding: 0.5rem;
+	background-color: #FFF;
+	z-index: 2;
+}
+
+.modal-bg,
+.modal {
+	display: none;
+}
+
+.modal-bg.active,
+.modal.active {
+	display: block;
+}
+
+
+/* TOOLTIP */
+
+.tooltip {
+	position: absolute;
+	top: 2rem;
+	right: -0.5rem;
+	width: 0;
+	padding: 1.1rem 1rem 1rem;
+	font-family: $font-medium;
+	background-color: $highlight;
+	color: #FFF;
+	@include transition(all 0.3s ease-in);
+	overflow: hidden;
+	line-height: 1.25;
+	font-size: 0.95rem;
+	text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+	.tooltip-content {
+		margin-left: 4rem;
+		width: 13.8rem;
+		opacity: 0;
+		@include transition(all 0.3s ease-in);
+		text-align: left;
+		font-family: $font-regular;
+
+		strong {
+			font-family: $font-bold;
+		}
+	}
+}
+
+.tooltip:before,
+.tooltip:after {
+	font-family: "city72icons";
+	content:'y';
+	color: #FFF;
+	position: absolute;
+	top: 0.4rem;
+	left: 0.5rem;
+	font-size: 1.05rem;
+	opacity: 1;
+	@include transition(all 0.3s ease-in);
+	-webkit-font-smoothing: antialiased;
+}
+
+.tooltip:after {
+	opacity: 0;
+	font-size: 3rem;
+	left: 1.2rem;
+	top: 0.9rem;
+}
+
+.prepare .tooltip:after {
+	content:'c';
+}
+
+
+.connect .tooltip:after {
+	content: '8';
+	font-size: 2rem;
+	left: 1rem;
+	top: 1.3rem;
+}
+
+.about .tooltip:after {
+	content: '7';
+	left: 1.1rem;
+	top: 0.8rem;
+}
+
+.big-title:hover .tooltip,
+.intro-video:hover .tooltip {
+	width: 19.8rem;
+
+	.tooltip-content {
+		opacity: 1;
+		@include transition(all 0.3s 0.3s ease-in);
+	}
+
+}
+
+.connect .big-title:hover .tooltip { width: 20.3rem; }
+.connect .tooltip-content { margin-left: 4.5rem; }
+
+
+.about .big-title:hover .tooltip { width: 20.1rem; }
+.about .tooltip-content { margin-left: 4.4rem; }
+
+.big-title:hover .tooltip:before {
+	opacity: 0;
+}
+
+.big-title:hover .tooltip:after {
+	opacity: 1;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+/* FIXING HOVERS */
+.footer-top .by-line a:hover,
+.footer-bottom a:hover,
+.know a:hover,
+.learn-more ul li a:hover,
+.print-this a:hover,
+.stay-tuned a:hover {
+	color: #4D4D4D;
+}
+
+@import "header";
+@import "footer";
+@import "slider";
+@import "home";
+@import "em_home";
+@import "connect";
+@import "prepare";
+@import "quick_guide";
+@import "about";
+@import "plan";
+@import "stories";
+@import "mobile";

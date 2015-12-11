@@ -1,0 +1,44 @@
+.main-content.stories(ng-controller="CityStoriesController" ng-init="initialize('#{escape_javascript(@city_json)}', '#{escape_javascript(@stories)}')")
+  .screen-intro
+    %p.screen-info Once you've interviewed and photographed residents for the Stories section, enter the images and quotes below. Add your city’s Identity Statement here too.
+    .action-area
+      %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+        %span.ladda-label Save Changes
+
+  %h2 Lead Image & Quote
+  %ul.editable-list.wide
+    %li
+      .list-element
+        .img-container
+          %img{:'ng-src' => '{{selectedStory.image_url}}'}
+          .image-edited-message(ng-show="selectedStory.new_image") Image edited. Save changes to update.
+        %h3 {{selectedStory.name}}
+        %p {{selectedStory.story}}
+      .list-actions
+        %button.btn{type: "button"}(ng-click="editStory(selectedStory)") Edit Story
+
+  %h2 Stories
+  %ul.editable-list.half-width
+    %li(ng-repeat="story in notSelectedStories")
+      .list-element
+        .img-container
+          %img{:'ng-src' => '{{story.image_url}}'}
+          .image-edited-message(ng-show="story.new_image") Image edited. Save changes to update.
+        %h3 {{story.name}}
+        %p {{story.story}}
+        %span.call-to-action {{callToAction(story)}}
+      .list-actions
+        %button.btn{type: "button"}(ng-click="editStory(story)") Edit Story
+
+  %h2 Your city's Identity Statement
+  %p.help-block Express the personality of your city through your Identity Statement – the rallying cry for city and residents alike.
+  %textarea.form-control#identity-statement{:name => "statement", :cols => "90", :rows => "7"}(ng-model="city.statement")
+  
+  .form-actions
+    %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+      %span.ladda-label Save Changes
+
+  .frontend-link
+    %a{:href => "/stories"} View this page &raquo;
+
+  %edit-story-modal(story="storyInEdition" stories="stories")

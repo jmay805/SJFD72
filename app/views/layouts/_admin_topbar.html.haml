@@ -1,0 +1,59 @@
+.header
+  .emergency
+    %label
+      Emergency Mode:
+      - if Mode.is_crisis_mode
+        %strong.status ON
+        = button_to 'Switch OFF', cms_modes_turn_off_path, class: 'btn btn-em', method: :put
+      - else
+        %strong.status OFF
+        %button.btn.btn-em{data: {toggle:"modal", target:".switch-em"}} Switch ON
+  %a#logo{href:"/cms"}
+    - if @about.logo.url
+      %img{src: "#{@about.logo.url}", alt: "#{@city.abbreviation}72 (logo)"}
+    - else
+      %span.text-logo #{@city.abbreviation}72
+
+%nav.navbar
+  %ul.nav.navbar-nav
+    %li{:class => ('active' if current_page?(cms_city_path))}
+      = link_to "City Info", cms_city_path
+    %li{:class => ('active' if current_page?(cms_city_connections_path))}
+      = link_to "Connections", cms_city_connections_path
+    %li{:class => ('active' if current_page?(cms_supplies_path))}
+      = link_to "Supplies", cms_supplies_path
+    %li{:class => ('active' if current_page?(cms_stories_path))}
+      = link_to "Stories", cms_stories_path
+    %li{:class => ('active' if current_page?(cms_plan_path))}
+      = link_to "Plan", cms_plan_path
+    %li{:class => ('active' if current_page?(cms_about_path))}
+      = link_to "About", cms_about_path
+    %li.user
+      %a.dropdown-toggle{data: {toggle:"dropdown"}}
+        Admin
+        %b.caret
+      %ul.dropdown-menu{role: "menu"}
+        %li
+          = link_to "Change Email", edit_admin_user_registration_path(section: 'email')
+        %li
+          = link_to "Change Password", edit_admin_user_registration_path(section: 'password')
+        %li
+          = link_to "Add/Change Analytics", cms_analytic_path
+        %li
+          = link_to "Log Out", destroy_admin_user_session_path, method: :delete
+    %li.em-menu
+      = link_to "Map & Updates", cms_map_path
+
+.modal.switch-em.fade
+  .modal-dialog.modal-lg
+    .modal-content(ng-init="mode = {title: '#{escape_javascript(@mode.title)}', description: '#{escape_javascript(@mode.text)}'}")
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Switch Emergency Mode
+      = simple_form_for @mode, url: cms_modes_turn_on_path, html: {name: 'modeForm'} do |f|
+        .modal-body
+          = f.input :title, label: 'Incident title', required: false, input_html: {required: 'required', :'ng-model' => 'mode.title'}
+          = f.input :text, label: 'A short description of the incident', input_html: {cols: '90', rows: '3', required: 'required', :'ng-model' => 'mode.description'}, required: false
+        .modal-footer
+          = f.submit 'Switch to Emergency Mode', class: 'btn btn-primary', :'ng-disabled' => 'modeForm.$invalid'
+          %button.btn{"data-dismiss" => "modal", type: "button"} Cancel

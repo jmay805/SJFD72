@@ -1,0 +1,53 @@
+= javascript_include_tag "cms/spinner_save_btn"
+
+.main-content.map
+
+  = simple_form_for @emergency_data, url: cms_map_path, html: { class: "js-form"} do |f|
+
+    .screen-intro
+      %p.screen-info Embed a Google Crisis Map centered on your city and connect multiple Twitter feeds.
+      .action-area
+        = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
+          %span.ladda-label Save Changes
+
+    .row
+      = f.input :map_url, as: :text, input_html: {cols: '55', rows: 6}, required: false, label: 'Crisis Map Link <span class="help">(starts with "http://")</span>'.html_safe, wrapper_html: {class: 'map-link-container'}
+
+      .map-link-instructions
+        %h2 Instructions to get the embed link:
+        %ol
+          %li Set up your map (see <a href="http://toolkit.sf72.org/" target="_blank">toolkit.sf72.org</a>).
+          %li Click the "Share" button to see the map links.
+          %li  Copy the "Link" code to paste here.
+
+    %h2 Twitter Updates
+    %p.help-block Provide crowdsourced updates through your account by retweeting relevant information and by following emergency hashtags.
+    .row
+      .timelines-container
+        = f.input :citizen_timeline_id, label: 'Your Timeline ID <span class="help">(e.g. 364391164582969346)</span>'.html_safe, required: false
+
+        = f.input :partner_timeline_id, label: 'Partner List ID', required: false
+
+        = f.input :transportation_timeline_id, label: 'Transportation List ID', required: false
+
+
+      .timelines-instructions
+        %h2 Instructions to get a Twitter timeline ID:
+        %ol
+          %li Set up Twitter lists that correspond to each updates section (see <a href="http://toolkit.sf72.org/" target="_blank">toolkit.sf72.org</a>).
+          %li Through Twitter's create widget interface can see the URL for your Twitter list.
+          %li Copy the long number at the end of the URL to paste here.
+
+
+    - unless flash.empty?
+      .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
+        %button.close(data-dismiss="alert" aria-hidden="true") &times;
+        %strong "#{ (flash.first[0] == :error)? "Error!" : "Saved!" }"
+        = flash.first[1]
+
+    .form-actions
+      = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
+        %span.ladda-label Save Changes
+
+    .frontend-link
+      %a{:href => "/em/home"} View this page &raquo;

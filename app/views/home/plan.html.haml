@@ -1,0 +1,74 @@
+= provide(:title, 'Make a Plan')
+= javascript_include_tag "home"
+.main-container.plan
+  = render :partial => "partials/header"
+  .opening.em-plan{:style => "background-image: url(#{@plan.community_image.url || "assets/placeholder-plan.jpg"})"}
+    %h1
+      = t(:make_a_plan_with_your_people)
+    %div
+      %p
+        = t(:emergency_planning)
+  .meet-up
+    %h2
+      = t(:set_up)
+    %p
+      = t(:first_set_up)
+  .plan-basics
+    %h2
+      = t(:what_basics)
+    .plan-list
+      %ul
+        %li.select
+          %strong
+            = t(:select_a_few)
+          = t (:whos_the_group)
+        %li.pick
+          %strong
+            = t(:pick_out)
+          = t(:who_can_serve)
+        %li.agree
+          %strong
+            = t(:agree_on_a_place)
+          = t(:how_about_a)
+  .basics-slider{:class => (@before_tips.empty?)? "": "js-has-before"}
+    %h2
+      = t(:learn_tips)
+    %p
+      = t(:read_and_print)
+    .slider-header
+      %ul.basics-tabs
+        - unless @before_tips.empty?
+          %li.active
+            %a.trigger-before{href:"#tab-before"} Before<span class="event-name"> a #{@quick_guide.title}</span>
+        %li{:class => (@before_tips.empty?)? "active": ""}
+          %a.trigger-during{href:"#tab-during"} During<span class="event-name"> a #{@quick_guide.title}</span>
+        %li
+          %a.trigger-after{href:"#tab-after"} After<span class="event-name"> a #{@quick_guide.title}</span>
+      %a.quick-list-trigger{href:"quick_guide"} Print Guide
+    .slider-body
+      - unless @before_tips.empty?
+        .slider-before
+          %ol.slider.quick-guide
+            - @before_tips.each do |tip|
+              %li
+                %h2
+                  = tip.title.html_safe
+                %p
+                  = tip.description.html_safe
+      .slider-during
+        %ol.slider.quick-guide
+          - @during_tips.each do |tip|
+            %li
+              %h2
+                = tip.title.html_safe
+              %p
+                = tip.description.html_safe
+      .slider-after
+        %ol.slider.quick-guide
+          - @after_tips.each do |tip|
+            %li
+              %h2
+                = tip.title.html_safe
+              %p
+                = tip.description.html_safe
+  = render :partial => "partials/footer"

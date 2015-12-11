@@ -1,0 +1,115 @@
+/* ABOUT */
+
+.opening.about-intro {
+	@include retina-image(/assets/placeholder-about, 750px 417px, jpg);
+}
+
+.about-intro {
+
+	h1 {
+		max-width: 725px;
+		margin-top: 30px;
+	}
+
+	div {
+		@include span-columns(3.38);
+
+		p {
+			margin-top: 3rem;
+		}
+	}
+}
+
+.about .main-intro {
+	padding: 0 30px;
+	@include span-columns(7.5);
+
+	h2 {
+		margin-top: 60px;
+	}
+}
+
+.aside .connect {
+	@include row();
+	border-left: 2px solid $highlight;
+	margin-top: 3.8rem;
+
+	strong {
+		font-weight: normal;
+		font-family: $font-bold;
+		color: $dark-grey;
+	}
+
+	a {
+		padding-top: 3rem;
+		display: block;
+		position: relative;
+	}
+
+	a:hover {
+		color: $dark-grey;
+	}
+
+	a:after {
+		position: absolute;
+		top: 1rem;
+		left: 0;
+		font-family: "city72icons";
+		content:'9';
+		font-size: 1.5rem;
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+.about-data {
+	@include outer-container;
+	margin-top: 120px;
+	margin-bottom: 5rem;
+	padding: 0 30px;
+
+	li {
+		@include span-columns(4);
+		padding-right: 0.6rem;
+	}
+
+	h2 {
+		@include col-title;
+		margin-bottom: 0;
+		line-height: 2.5rem;
+	}
+
+	p {
+		margin-top: 0.4rem;
+	}
+
+	.about-who,
+	.about-what,
+	.about-why {
+		width: 302px;
+		height: 172px;
+	}
+
+	.about-who {
+		@include retina-image(/assets/static/about-us-1, 302px 172px, jpg);
+	}
+
+	.about-what {
+		@include retina-image(/assets/static/about-us-2, 302px 172px, jpg);
+	}
+
+	.about-why {
+		@include retina-image(/assets/static/about-us-3, 302px 172px, jpg);
+	}
+
+}
+
+
+/* Credits */
+.image-credits {
+	padding: $gutter;
+	margin-bottom: 7rem;
+
+	h2 {
+		@include col-title;
+	}
+}

@@ -1,0 +1,69 @@
+-# .i18n-change-bar
+-#   %ul
+-#     %li
+-#       %a{href:"/es/home/"}
+-#         tiếng Việt  |  汉语  |  English  |  Filipino  |  Español
+  -# .change-icon#change-icon
+  -#   %img{src: '/assets/translate_transp.gif', class: 'img-responsive'}
+  -# .language-menu#language-menu
+.header
+  %a.logo{href:"/home"}
+    #logo{ height: "100", width: "150"}
+      %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
+      -# - if @about.logo.url
+      -#   %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
+      -# - else
+      -#   %span.text-logo #{@city.abbreviation}72
+  %a.logo-mobile{href:"/home"}
+  %ul.main-nav
+    %li
+      %a{href:"/connect"}
+        %strong
+          = t(:get_connected)
+    %li
+      %a{href:"/supplies"}
+        %strong
+          = t(:gather_supplies)
+    %li
+      %a{href:"/stories"}
+        %strong
+          = t(:view_stories)
+    %li
+      %a{href:"/plan"}
+        %strong
+          = t(:make_a_plan)
+    %li
+      %a{href:"/em/home"}
+        %strong
+          = t(:map_and_updates)
+  - unless browser.ie?
+    .mobile-menu
+      .normal-mode
+        %ul.main-nav
+          %li
+            %a{href:"/home"}
+              %strong Home
+          %li
+            %a{href:"/connect"}
+              %strong
+                = t(:get_connected)
+          %li
+            %a{href:"/supplies"}
+              %strong
+                = t(:gather_supplies)
+          %li
+            %a{href:"/stories"}
+              %strong
+                = t(:view_stories)
+          %li
+            %a{href:"/plan"}
+              %strong
+                = t(:make_a_plan)
+          %li.em-li
+            %a{href:"/em/home#mobile-maps"}
+              %strong
+                = t(:situation_map)
+          %li.em-li
+            %a{href:"/em/home#mobile-updates"}
+              %strong
+                = t(:updates)

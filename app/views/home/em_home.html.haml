@@ -1,0 +1,152 @@
+= provide(:title, 'Map and Updates')
+= stylesheet_link_tag "joyride-2.1"
+= javascript_include_tag "jquery.joyride-2.1"
+= javascript_include_tag "froogaloop.min"
+= javascript_include_tag "em"
+.home-em.main-container
+  .demo-ribbon
+    .ribbon-inner Demo
+  .wrapper.em-header
+    = render :partial => "partials/header"
+.what-to-do-wrapper#mobile-quick-guide
+  .alert-wide
+    .wrapper
+      - if @mode.em_mode
+        .alert-info
+          %h3 #{@mode.title}
+          %p #{@mode.text}
+      - else
+        .alert-info
+          %h3
+            = t(:in_an_emergency)
+          -# %p
+          -#   = t(:you_will_find)
+      .map-actions
+        -# %a.map-tips-trigger{href:"#"}
+        -#   = t(:map_guide)
+        %a.expand-map-trigger{href:"#"}
+          = t(:expand_map)
+      / .em-quick-guide-trigger
+      /   %a.show-quick-guide{src:"#"} What should I do?
+      /   %a.hide-quick-guide{src: "#"} Hide what to do
+  .em-quick-guide
+    .wrapper
+      / %h3 What to do
+      / %ol.quick-guide
+      /   - if !@mode.recommendation_1_title.empty?
+      /     %li
+      /       %h2 #{@mode.recommendation_1_title}
+      /       %p #{@mode.recommendation_1_text}
+      /   - if !@mode.recommendation_2_title.empty?
+      /     %li
+      /       %h2 #{@mode.recommendation_2_title}
+      /       %p #{@mode.recommendation_2_text}
+      /   - if !@mode.recommendation_3_title.empty?
+      /     %li
+      /       %h2 #{@mode.recommendation_3_title}
+      /       %p #{@mode.recommendation_3_text}
+.map-container#mobile-maps
+  .wrapper
+  .map-area
+    .map-tooltip-placement
+    %iframe.map{src: @emergency_data.map_url, height: "498"}
+#mobile-updates
+  .tw-tabs-container
+    %ul.tw-tabs
+      %li.active#citizen-updates-tab
+        %a{href:"#tab-citizen-updates"}
+          %h3
+            = t(:official_updates)
+      %li#official-reports-tab
+        %a{href:"#tab-official-reports"}
+          %h3
+            = t(:partner_updates)
+      %li#transportation-updates-tab
+        %a{href:"#tab-service-status"}
+          %h3
+            = t(:transportation_updates)
+    %ul.tw-tabs-mobile
+      %li.active
+        %a{href:"#tab-citizen-updates"}
+          %h3
+            = t(:official)
+      %li
+        %a{href:"#tab-official-reports"}
+          %h3
+            = t(:partner)
+      %li
+        %a{href:"#tab-service-status"}
+          %h3
+            = t(:transportation)
+  .main-container.updates-wrapper
+    .updates
+      .citizen-reports
+        <style type="text/css">#twitter-widget-1{width:70%}</style>
+        <a class="twitter-timeline" data-widget-id="#{@emergency_data.citizen_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      .official-reports
+        <style type="text/css">#twitter-widget-2{width:70%}</style>
+        <a class="twitter-timeline" data-widget-id="#{@emergency_data.partner_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      .status
+        <style type="text/css">#twitter-widget-3{width:70%}</style>
+        <a class="twitter-timeline" data-widget-id="#{@emergency_data.transportation_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+.main-container
+  = render :partial => "partials/footer"
+/ .modal-wrapper
+/   .em-preview-modal.modal
+/     %a.icon-close{href:"#"}
+/     .tour-intro
+/       %h2 SF72 CRISIS MODE
+/       %h3 The city’s hub for emergency response.
+/     .tour-intro-step2
+/       %p A real emergency might not look like a monster attacking our City by the Bay, but it might leave many of us wondering what to do.
+/       %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources.
+/       %p <strong>Tour SF72 Crisis Mode</strong> to better understand how to use this resource, in the event of an emergency. The non-monster kind.
+/       %a.btn{href:"#"} Take a tour
+%ol#joyride-steps{"style" => "display:none"}
+  %li{"data-class" => "alert-info"}
+    .icon.icon-info
+    %h4.header
+      = t(:what_happened)
+    %p.description
+      = t(:announces_the_crisis)
+    %p.index
+      = t(:one_of_five)
+
+  %li{"data-class" => "map-tooltip-placement",
+      "data-options"  => "tipLocation:right",
+      }
+    .icon.icon-map-on
+    %h4.header
+      = t(:street_status)
+    %p.description
+      = t(:a_geo_tageed)
+    %p.index
+      = t(:two_of_five)
+  %li{"data-id" => "citizen-updates-tab"}
+    .icon.icon-twitter-big-on
+    %h4.header
+      = t(:official_updates_tour)
+    %p.description
+      = t(:official_updates_what)
+    %p.index
+      = t(:three_of_five)
+  %li{"data-id" => "official-reports-tab"}
+    .icon.icon-alert
+    %h4.header
+      = t(:partner_updates_tour)
+    %p.description
+      = t(:partner_updates_what)
+    %p.index
+      = t(:four_of_five)
+  %li{"data-id" => "transportation-updates-tab",
+      "data-button" => "Finish"}
+    .icon.icon-transport
+    %h4.header
+      = t(:transportation_alerts)
+    %p.description
+      = t(:transportation_alerts_what)
+    %p.index
+      = t(:five_of_five)
