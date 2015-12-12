@@ -33,7 +33,7 @@ $header-height: 40px;
 
 #logo {
 	@include span-columns(3.37061107);
-	margin-top: 1.5rem;
+	margin-top: 2rem;
 	text-align: center;
 	padding: .5rem 1rem;
 
@@ -100,7 +100,7 @@ $header-height: 40px;
 
 	li.active {
       	background-color: lighten( $light-grey, 5% );
-		
+
 		a {
       		color: $dark-grey;
 		}
@@ -108,7 +108,7 @@ $header-height: 40px;
 
 	li:hover {
       	background-color: lighten( $light-grey, 7.5% );
-		
+
 		a {
       		color: $dark-grey;
 		}
@@ -128,7 +128,7 @@ $header-height: 40px;
 			font-family: 'city72icons';
 			content: 's';
 			font-size: 0.8em;
-			
+
 		}
 
 		span {
