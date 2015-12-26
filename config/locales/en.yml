@@ -82,12 +82,12 @@ en:
   #Partners Section
   learn_from_partners: "Learn more from our partners."
   connect_with_organizations: "To get even better prepared as a household, neighborhood, or community, connect with these organizations."
-  partner1: "FEMA"
-  partner1_description: "...ready..."
+  partner1: "The FEMA Ready Responder Toolkit"
+  partner1_description: "provides emergency response agencies with a series of planning tools to help prepare their personnel and their families for emergencies."
   partner2: "American Red Cross"
-  partner2_description: "provides a variety of trainings including first aid, CPR, and how to prepare for emergencies"
-  partner3: "Santa Clara County ..."
-  partner3_description: "..."
+  partner2_description: "provides a variety of trainings including first aid, CPR, and how to prepare for emergencies."
+  partner3: "AlertSCC"
+  partner3_description: "is a free, easy, and confidential way for anyone who lives or works in Santa Clara County to get emergency warnings sent directly to their cell phone, mobile device, email, or landline."
 
   #===========================#
   #Gather Supplies Page
