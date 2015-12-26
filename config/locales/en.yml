@@ -82,12 +82,12 @@ en:
   #Partners Section
   learn_from_partners: "Learn more from our partners."
   connect_with_organizations: "To get even better prepared as a household, neighborhood, or community, connect with these organizations."
-  partner1: "American Red Cross"
-  partner1_description: "provides a variety of trainings including first aid, CPR, and how to prepare for emergencies"
-  partner2: "CORE"
-  partner2_description: "offers classes that will teach you how to prepare, organize, and create an emergency response team."
-  partner3: "Alameda County CERT"
-  partner3_description: "teaches residents how to care for themselves, their families, and their neighbors in an emergency."
+  partner1: "FEMA"
+  partner1_description: "...ready..."
+  partner2: "American Red Cross"
+  partner2_description: "provides a variety of trainings including first aid, CPR, and how to prepare for emergencies"
+  partner3: "Santa Clara County ..."
+  partner3_description: "..."
 
   #===========================#
   #Gather Supplies Page
