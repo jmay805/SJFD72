@@ -190,7 +190,8 @@ body {
 		width: 1020px;
 		height: 538px;
 		text-align: center;
-		padding-top: 9.3rem;
+
+		padding: 9.3rem 3rem 0rem 3rem;
 		text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 
 		h1 {
@@ -387,6 +388,7 @@ body {
 	top: 0.9rem;
 }
 
+
 .prepare .tooltip:after {
 	content:'c';
 }
@@ -415,6 +417,7 @@ body {
 	}
 
 }
+
 
 .connect .big-title:hover .tooltip { width: 20.3rem; }
 .connect .tooltip-content { margin-left: 4.5rem; }
