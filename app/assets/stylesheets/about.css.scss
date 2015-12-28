@@ -8,14 +8,14 @@
 
 	h1 {
 		max-width: 725px;
-		margin-top: 30px;
+		margin-top: 3px;
 	}
 
 	div {
 		@include span-columns(3.38);
 
 		p {
-			margin-top: 3rem;
+			margin-top: 1rem;
 		}
 	}
 }
