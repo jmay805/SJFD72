@@ -129,6 +129,9 @@
 	li.nextdoor {
 		@include icon(#FFF,3.2rem,$nextdoor-icn,$highlight,0,0);
 	}
+	li.pulsepoint {
+		@include icon(#FFF,3.2rem,$pulsepoint-icn,$highlight,0,0);
+	}
 }
 
 .full-img-article {

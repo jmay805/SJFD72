@@ -68,7 +68,11 @@ en:
   #Nextdoor
   usenextdoor: "Connect with your neighbors on Nextdoor"
   whynextdoor: "Sign up for Nextdoor and make a plan with your neighbors"
-  nextdoor_emergency: "Share information, resources and check-in with each other."
+  nextdoor_emergency: "Share local information and resources with people who live near you."
+  #PulsePoint
+  usepulsepoint: "Use PulsePoint to respond locally"
+  whypulsepoint: "Download the app and sign up to be notified of incidents near you."
+  pulsepoint_emergency: "Stay tuned with local alerts---know what's going on and help respond to incidents in your area."
   #Neighborhood Networks Section
   neighborhood_networks: "Connect through your local networks."
   neighborhood_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
