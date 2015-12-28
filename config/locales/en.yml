@@ -65,10 +65,10 @@ en:
   use_cloud_emergency: "Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud."
   use_local_networks: "Connect through your local networks."
   use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
-  #Nixle
-  # usenixle: "..."
-  # whynixle: "..."
-  # nixle_emergency: "..."
+  #Nextdoor
+  usenextdoor: "Connect with your neighbors on Nextdoor"
+  whynextdoor: "Sign up for Nextdoor and make a plan with your neighbors"
+  nextdoor_emergency: "Share information, resources and check-in with each other."
   #Neighborhood Networks Section
   neighborhood_networks: "Connect through your local networks."
   neighborhood_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
