@@ -66,9 +66,9 @@ en:
   use_local_networks: "Connect through your local networks."
   use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
   #Nixle
-  usenixle: "Sign up for Nixle to get txt message updates"
-  whynixle: "Sign up for text message updates about what's going on in your neighborhood and throughout Oakland."
-  nixle_emergency: "Check your phone for automated updates and text messages."
+  # usenixle: "..."
+  # whynixle: "..."
+  # nixle_emergency: "..."
   #Neighborhood Networks Section
   neighborhood_networks: "Connect through your local networks."
   neighborhood_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
@@ -162,7 +162,7 @@ en:
   # : "Get inspired by members of our community."
   # : "Hearing stories from people that have lived through an emergency is a powerful way to learn. You are probably more prepared than you think."
   a_personal_look: "A personal look at emergencies and connection."
-  watch_personal_stories: "Watch stories of people who have lived through disasters—and those who are already fostering connections in Oakland. No matter your situation, chances are, there’s someone like you with wisdom to share."
+  watch_personal_stories: "Watch stories of people who have lived through disasters—and those who are already fostering connections in their community. No matter your situation, chances are, there’s someone like you with wisdom to share."
 
   #STORY TITLES AND CAPTIONS
   # : ""
@@ -178,8 +178,8 @@ en:
   placeholder_story_name: "Tess Ting"
 
   #CITY STATEMENT
-  our_city: "Our city."
-  city_statement: "Oakland is a place where people come together to enjoy life, especially when that means helping eachother."
+  our_city: "Our community."
+  city_statement: "Our community is a place where people come together to enjoy life, especially when that means helping eachother."
   we_believe: "We believe in connection, not catastrophe."
 
 
@@ -236,8 +236,7 @@ en:
   #Map & Updates Page(s)
   #===========================#
   em_home_title: "SJFD72 - In an Emergency"
-  in_an_emergency: "Use this map and these Twitter feeds to see what's going on around Oakland."
-  you_will_find: "You’ll find official updates, partner updates, traffic information, and a crisis map to navigate city resources. Tour this Emergency Mode to better understand how to use it in the event of an emergency."
+  in_an_emergency: "Use this map and these Twitter feeds to see what's going on around San Jose."
   map_guide: "Map Guide"
   expand_map: "Expand Map"
   official_updates: "Official Updates"
@@ -254,13 +253,13 @@ en:
   a_geo_tageed: "A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas -- so you can find safety in your surroundings"
   two_of_five: "2 of 5"
   official_updates_tour: "Official Updates"
-  official_updates_what: "Up-to-date content from official city sources -- so you can know exactly what is happening, when it happens."
+  official_updates_what: "Up-to-date content from official sources -- so you can know exactly what is happening, when it happens."
   three_of_five: "3 of 5"
   partner_updates_tour: "Partner Updates"
   partner_updates_what: "A live stream of crowdsourced updates from Twitter -- so you can get an on-the-ground picture of what’s going on."
   four_of_five: "4 of 5"
   transportation_alerts: "Transportation alerts"
-  transportation_alerts_what: "Public transportation status updates -- so you can navigate the city quickly, easily, and safely."
+  transportation_alerts_what: "Public transportation status updates -- so you can navigate the area quickly, easily, and safely."
   five_of_five: "5 of 5"
   finish: "Finish"
   next: "Next"
